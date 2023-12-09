@@ -1,0 +1,250 @@
+/*Custom Properties */
+:root {
+  --first-color: #f1197a;
+  --second-color: rgb(29, 148, 223);
+  --first-background-color: rgb(55, 52, 52);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #ffffff;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --font: "Raleway", sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/* Reset */
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+  letter-spacing: 1.2px;
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Components */
+
+/* Menu */
+.menu {
+  position: static;
+  flex-direction: row;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Alinea los enlaces hacia la derecha */
+  right: 0;
+  margin-right: 4.5rem;
+}
+
+.menu a {
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--first-color);
+  position: relative;
+}
+
+.menu a:hover {
+  color: var(--black-color);
+}
+
+.menu a:after {
+  content: "";
+  position: absolute;
+  background-color: var(--first-color);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.menu a:hover:after {
+  width: 100%;
+}
+
+/* Utilities */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+
+/* Site styles */
+
+header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.logo h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.8s;
+}
+
+#primary {
+  color: var(--first-color);
+}
+
+#second {
+  color: var(--second-color);
+}
+
+.logo {
+  display: flex;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  height: calc(var(--header-height) - 0.8rem);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  grid-area: header;
+}
+
+.grid-container {
+  display: grid;
+  gap: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #fff, #d4a3ff);
+  grid-template:
+    "header" 
+    "home" 100vh
+    "proyects" 90vh
+    "contact" 50vh
+    "footer" auto; /* Añade la definición para el área del footer */
+}
+
+.home {
+  grid-area: home;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: #444141;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prashe p{
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: semi-bold;
+}
+.prashe {
+    text-align: center; /* Centra el texto horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+}
+
+#cv{
+    background-color: var(--second-color);
+    padding: .8rem;
+    border-radius: 20px;
+    color:var(--white-color);
+    cursor:pointer;
+    margin-top: 2rem;
+    transition: all 0.7s ease;
+    box-shadow: .1rem 0.15rem rgb(127, 100, 100);
+    font-weight: bold;
+}
+
+#cv:hover{
+    margin-top: 1.5rem;
+}
+#redes{
+    margin-top: 1rem;
+}
+#redes a{
+    cursor: pointer;
+    padding: .2rem;
+    color: var(--black-color);
+    font-size: 1.4rem;
+}
+.content {
+  margin-top: 8rem;
+}
+.content h1 {
+  font-size: 3.2rem;
+}
+.role {
+  margin-top: 1.4rem;
+}
+.role h2 {
+  font-size: 2.5rem;
+  color: rgb(172, 32, 172);
+}
+
+.proyects {
+  grid-area: proyects;
+  background-color: var(--first-background-color);
+  border-radius: 20px;
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
+}
+
+.contact {
+  grid-area: contact;
+  background-color: blueviolet;
+}
